@@ -5,7 +5,7 @@ parts:
   chapters:
   - file: math/tensors-and-shapes
     sections:
-    - file: math/tensors-and-shapes
+    - file: math/NLP
 - caption: Machine Learning
   chapters:
   - file: ml/introduction
