@@ -1,14 +1,16 @@
 format: jb-book
-root: intro
-sections:
-  title: Blog
-  sections:
-    title: Machine Learning
+- file: intro
+
+- part: Blog
+  chapters:
+    title: Machine learning
+    sections:
       - file: ml/introduction
       - file: ml/regression
       - file: ml/classification
       - file: ml/kernel
-    title: Deep Learning
+    title: Deep learning
+    sections:
       - file: dl/introduction
       - file: dl/layers
       - file: dl/gnn
@@ -19,15 +21,13 @@ sections:
       - file: dl/Equivariant
       - file: dl/NLP
       - file: dl/xai
-    title: Software Development
+    title: Math
+    sections:
       - file: math/tensors-and-shapes
-    title: Product Management
-      - file: applied/QM9
-      - file: applied/MolGenerator
     
   
   
-
+  
 
 #format: jb-book
 #root: intro
