@@ -1,18 +1,16 @@
 format: jb-book
 root: intro
 parts:
-- caption: About Me
+- caption: Math Review
   chapters:
   - file: math/tensors-and-shapes
-    sections:
-    - file: math/NLP
 - caption: Machine Learning
   chapters:
   - file: ml/introduction
   - file: ml/regression
   - file: ml/classification
   - file: ml/kernel
-- caption: C. Deep Learning
+- caption: Deep Learning
   chapters:
   - file: dl/introduction
   - file: dl/layers
@@ -24,7 +22,7 @@ parts:
   - file: dl/Equivariant
   - file: dl/NLP
   - file: dl/xai
-- caption: D. Applications
+- caption: Applications
   chapters:
   - file: applied/QM9
   - file: applied/MolGenerator
