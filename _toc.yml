@@ -1,69 +1,72 @@
-#format: jb-book
-#root: intro
-#parts:
-#- caption: Math Review
-  #chapters:
-  #- file: math/tensors-and-shapes
-#- caption: Machine Learning
-  #chapters:
-  #- file: ml/introduction
-  #- file: ml/regression
-  #- file: ml/classification
-  #- file: ml/kernel
-#- caption: Deep Learning
-  #chapters:
-  #- file: dl/introduction
-  #- file: dl/layers
-  #- file: dl/gnn
-  #- file: dl/attention
-  #- file: dl/data
-  #- file: dl/VAE
-  #- file: dl/flows
-  #- file: dl/Equivariant
-  #- file: dl/NLP
-  #- file: dl/xai
-#- caption: Applications
-  #chapters:
-  #- file: applied/QM9
-  #- file: applied/MolGenerator
-
-- title: About Me
-  file: math/tensors-and-shapes
-- title: Blog
-  file: chapters/01/what-is-data-science
+format: jb-book
+root: intro
+parts:
+- caption: About Me
+  chapters:
+  - file: math/tensors-and-shapes
+- caption: Machine Learning
+  chapters:
+  - file: ml/introduction
+    sections:
+    - file: ml/regression
+    - file: ml/classification
+    - file: ml/kernel
+- caption: Deep Learning
+  chapters:
+  - file: dl/introduction
   sections:
-  - title: Machine Learning
-    file: ml/introduction
-    sections:
-    - title: Regression
-      file: ml/regression
-    - title: Classification
-      file: ml/classification
-    - title: Kernel
-      file: ml/kernel
-  - title: Deep Learning
-    file: dl/introduction
-    sections:
-    - title: Layers
-      file: dl/layers
-    - title: GNN
-      file: dl/gnn
-    - title: Attention
-      file: dl/attention
-    - title: Data
-      file: dl/data
-    - title: VAE
-      file: dl/VAE
-    - title: Flows
-      file: dl/flows
-    - title: Equivariant
-      file: dl/Equivariant
-    - title: NLP
-      file: dl/NLP
-    - title: Xai
-      file: dl/xai
-  - title: Applications
-    file: applied/QM9
-    sections:
-    - title: MolGenerator
-      file: applied/MolGenerator
+    - file: dl/layers
+    - file: dl/gnn
+    - file: dl/attention
+    - file: dl/data
+    - file: dl/VAE
+    - file: dl/flows
+    - file: dl/Equivariant
+    - file: dl/NLP
+    - file: dl/xai
+- caption: Applications
+  chapters:
+  - file: applied/QM9
+  sections:
+    - file: applied/MolGenerator
+
+#- title: About Me
+  #file: math/tensors-and-shapes
+#- title: Blog
+  #file: chapters/01/what-is-data-science
+  #sections:
+  #- title: Machine Learning
+    #file: ml/introduction
+    #sections:
+    #- title: Regression
+      #file: ml/regression
+    #- title: Classification
+      #file: ml/classification
+    #- title: Kernel
+      #file: ml/kernel
+  #- title: Deep Learning
+    #file: dl/introduction
+    #sections:
+    #- title: Layers
+      #file: dl/layers
+    #- title: GNN
+      #file: dl/gnn
+    #- title: Attention
+      #file: dl/attention
+    #- title: Data
+      #file: dl/data
+    #- title: VAE
+      #file: dl/VAE
+    #- title: Flows
+      #file: dl/flows
+    #- title: Equivariant
+      #file: dl/Equivariant
+    #- title: NLP
+      #file: dl/NLP
+    #- title: Xai
+      #file: dl/xai
+  #- title: Applications
+    #file: applied/QM9
+    #sections:
+    #- title: MolGenerator
+      #file: applied/MolGenerator
