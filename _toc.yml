@@ -9,7 +9,6 @@ parts:
     - file: ml/regression
     - file: ml/classification
     - file: ml/kernel
-- chapters:
   - file: dl/introduction
     sections:
     - file: dl/layers
@@ -25,6 +24,34 @@ parts:
   - file: applied/QM9
   sections:
     - file: applied/MolGenerator
+
+#format: jb-book
+#root: intro
+#parts:
+#- chapters:
+  #- file: math/tensors-and-shapes
+  #chapters:
+  #- file: ml/introduction
+    #sections:
+    #- file: ml/regression
+    #- file: ml/classification
+    #- file: ml/kernel
+#- chapters:
+  #- file: dl/introduction
+    #sections:
+    #- file: dl/layers
+    #- file: dl/gnn
+    #- file: dl/attention
+    #- file: dl/data
+    #- file: dl/VAE
+    #- file: dl/flows
+    #- file: dl/Equivariant
+    #- file: dl/NLP
+    #- file: dl/xai
+#- chapters:
+  #- file: applied/QM9
+  #sections:
+    #- file: applied/MolGenerator
 
 #format: jb-book
 #root: intro
