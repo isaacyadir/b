@@ -29,7 +29,6 @@
 
 - title: About Me
   file: math/tensors-and-shapes
-
 - title: Blog
   file: chapters/01/what-is-data-science
   sections:
@@ -44,6 +43,7 @@
       file: ml/kernel
   - title: Deep Learning
     file: dl/introduction
+    sections:
     - title: Layers
       file: dl/layers
     - title: GNN
