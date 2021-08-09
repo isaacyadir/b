@@ -1,20 +1,15 @@
-format: jb-book
-root: intro
 parts:
-- caption: About Me
-  chapters:
+- chapters:
   - file: math/tensors-and-shapes
-- caption: Machine Learning
   chapters:
   - file: ml/introduction
     sections:
     - file: ml/regression
     - file: ml/classification
     - file: ml/kernel
-- caption: Deep Learning
-  chapters:
+- chapters:
   - file: dl/introduction
-  sections:
+    sections:
     - file: dl/layers
     - file: dl/gnn
     - file: dl/attention
@@ -24,11 +19,42 @@ parts:
     - file: dl/Equivariant
     - file: dl/NLP
     - file: dl/xai
-- caption: Applications
-  chapters:
+- chapters:
   - file: applied/QM9
   sections:
     - file: applied/MolGenerator
+
+#format: jb-book
+#root: intro
+#parts:
+#- caption: About Me
+  #chapters:
+  #- file: math/tensors-and-shapes
+#- caption: Machine Learning
+  #chapters:
+  #- file: ml/introduction
+    #sections:
+    #- file: ml/regression
+    #- file: ml/classification
+    #- file: ml/kernel
+#- caption: Deep Learning
+  #chapters:
+  #- file: dl/introduction
+    #sections:
+    #- file: dl/layers
+    #- file: dl/gnn
+    #- file: dl/attention
+    #- file: dl/data
+    #- file: dl/VAE
+    #- file: dl/flows
+    #- file: dl/Equivariant
+    #- file: dl/NLP
+    #- file: dl/xai
+#- caption: Applications
+  #chapters:
+  #- file: applied/QM9
+  #sections:
+    #- file: applied/MolGenerator
 
 #- title: About Me
   #file: math/tensors-and-shapes
