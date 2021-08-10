@@ -1,0 +1,96 @@
+Traceback (most recent call last):
+  File "/usr/share/miniconda/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/usr/share/miniconda/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/share/miniconda/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/share/miniconda/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/share/miniconda/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/usr/share/miniconda/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/usr/share/miniconda/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/usr/share/miniconda/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+from emlp.groups import SO, S
+import emlp.reps as reps
+import emlp
+import haiku as hk
+import emlp.nn.haiku as ehk
+import jax.numpy as jnp
+
+so3_rep = reps.V(SO(3))
+# grab a random group element
+sampled_g = SO(3).sample()
+dense_rep = so3_rep.rho(sampled_g)
+# check its a member of SO(3)
+# g @ g.T = I
+print(dense_rep @ dense_rep.T)
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+[0;32m/tmp/ipykernel_9121/2561072149.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mfrom[0m [0memlp[0m[0;34m.[0m[0mgroups[0m [0;32mimport[0m [0mSO[0m[0;34m,[0m [0mS[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mimport[0m [0memlp[0m[0;34m.[0m[0mreps[0m [0;32mas[0m [0mreps[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mimport[0m [0memlp[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;32mimport[0m [0mhaiku[0m [0;32mas[0m [0mhk[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;32mimport[0m [0memlp[0m[0;34m.[0m[0mnn[0m[0;34m.[0m[0mhaiku[0m [0;32mas[0m [0mehk[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/site-packages/emlp/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     11[0m [0;34m[0m[0m
+[1;32m     12[0m [0m__version__[0m [0;34m=[0m [0;34m'1.0.1'[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 13[0;31m [0;32mfrom[0m [0;34m.[0m[0mnn[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     14[0m [0;32mfrom[0m [0;34m.[0m[0mgroups[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     15[0m [0;32mfrom[0m [0;34m.[0m[0mreps[0m [0;32mimport[0m [0;34m*[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/site-packages/emlp/nn/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0;32mimport[0m [0mpkgutil[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0m__all__[0m [0;34m=[0m [0;34m[[0m[0;34m][0m [0;31m# expose objax implementation as base nn[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m [0mmodule[0m [0;34m=[0m [0mimportlib[0m[0;34m.[0m[0mimport_module[0m[0;34m([0m[0;34m'.'[0m[0;34m+[0m[0;34m'objax'[0m[0;34m,[0m[0mpackage[0m[0;34m=[0m[0m__name__[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0mglobals[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0;34m{[0m[0mk[0m[0;34m:[0m [0mgetattr[0m[0;34m([0m[0mmodule[0m[0;34m,[0m [0mk[0m[0;34m)[0m [0;32mfor[0m [0mk[0m [0;32min[0m [0mmodule[0m[0;34m.[0m[0m__all__[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0m__all__[0m [0;34m+=[0m [0mmodule[0m[0;34m.[0m[0m__all__[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/importlib/__init__.py[0m in [0;36mimport_module[0;34m(name, package)[0m
+[1;32m    125[0m                 [0;32mbreak[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    126[0m             [0mlevel[0m [0;34m+=[0m [0;36m1[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 127[0;31m     [0;32mreturn[0m [0m_bootstrap[0m[0;34m.[0m[0m_gcd_import[0m[0;34m([0m[0mname[0m[0;34m[[0m[0mlevel[0m[0;34m:[0m[0;34m][0m[0;34m,[0m [0mpackage[0m[0;34m,[0m [0mlevel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    128[0m [0;34m[0m[0m
+[1;32m    129[0m [0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/site-packages/emlp/nn/objax.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      4[0m [0;32mimport[0m [0mobjax[0m[0;34m.[0m[0mfunctional[0m [0;32mas[0m [0mF[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;32mimport[0m [0mnumpy[0m [0;32mas[0m [0mnp[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m [0;32mfrom[0m [0memlp[0m[0;34m.[0m[0mreps[0m [0;32mimport[0m [0mT[0m[0;34m,[0m[0mRep[0m[0;34m,[0m[0mScalar[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      7[0m [0;32mfrom[0m [0memlp[0m[0;34m.[0m[0mreps[0m [0;32mimport[0m [0mbilinear_weights[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      8[0m [0;32mfrom[0m [0memlp[0m[0;34m.[0m[0mreps[0m[0;34m.[0m[0mproduct_sum_reps[0m [0;32mimport[0m [0mSumRep[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/site-packages/emlp/reps/__init__.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      5[0m [0m__all__[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;32mfor[0m [0mloader[0m[0;34m,[0m [0mmodule_name[0m[0;34m,[0m [0mis_pkg[0m [0;32min[0m [0mpkgutil[0m[0;34m.[0m[0mwalk_packages[0m[0;34m([0m[0m__path__[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 7[0;31m     [0mmodule[0m [0;34m=[0m [0mimportlib[0m[0;34m.[0m[0mimport_module[0m[0;34m([0m[0;34m'.'[0m[0;34m+[0m[0mmodule_name[0m[0;34m,[0m[0mpackage[0m[0;34m=[0m[0m__name__[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      8[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      9[0m         [0mglobals[0m[0;34m([0m[0;34m)[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0;34m{[0m[0mk[0m[0;34m:[0m [0mgetattr[0m[0;34m([0m[0mmodule[0m[0;34m,[0m [0mk[0m[0;34m)[0m [0;32mfor[0m [0mk[0m [0;32min[0m [0mmodule[0m[0;34m.[0m[0m__all__[0m[0;34m}[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/importlib/__init__.py[0m in [0;36mimport_module[0;34m(name, package)[0m
+[1;32m    125[0m                 [0;32mbreak[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    126[0m             [0mlevel[0m [0;34m+=[0m [0;36m1[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 127[0;31m     [0;32mreturn[0m [0m_bootstrap[0m[0;34m.[0m[0m_gcd_import[0m[0;34m([0m[0mname[0m[0;34m[[0m[0mlevel[0m[0;34m:[0m[0;34m][0m[0;34m,[0m [0mpackage[0m[0;34m,[0m [0mlevel[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    128[0m [0;34m[0m[0m
+[1;32m    129[0m [0;34m[0m[0m
+
+[0;32m/usr/share/miniconda/lib/python3.8/site-packages/emlp/reps/pytorch_support.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0;32mimport[0m [0mtorch[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      2[0m [0;32mfrom[0m [0mtorch[0m[0;34m.[0m[0mautograd[0m [0;32mimport[0m [0mFunction[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;32mimport[0m [0mjax[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0;32mfrom[0m [0mjax[0m[0;34m.[0m[0mtree_util[0m [0;32mimport[0m [0mtree_flatten[0m[0;34m,[0m [0mtree_unflatten[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      5[0m [0;32mimport[0m [0mtypes[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mModuleNotFoundError[0m: No module named 'torch'
+ModuleNotFoundError: No module named 'torch'
+
