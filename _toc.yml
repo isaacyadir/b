@@ -7,12 +7,12 @@ parts:
   - file: applied/MolGenerator
     sections:
     - file: ml/introduction
-    sections:
+      sections:
       - file: ml/regression
       - file: ml/classification
       - file: ml/kernel
     - file: dl/introduction
-    sections:
+      sections:
       - file: dl/layers
       - file: dl/gnn
       - file: dl/attention
