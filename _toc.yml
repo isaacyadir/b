@@ -7,7 +7,7 @@ parts:
   - file: applied/MolGenerator
     sections:
     - file: ml/introduction
-      sections:
+    sections:
       - file: ml/regression
       - file: ml/classification
       - file: ml/kernel
